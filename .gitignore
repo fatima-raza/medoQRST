@@ -44,3 +44,6 @@ local.properties
 # System files
 .DS_Store
 Thumbs.db
+
+# node modules
+backend/node_modules/
