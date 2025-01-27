@@ -46,4 +46,4 @@ local.properties
 Thumbs.db
 
 # node modules
-backend/node_modules/
+admin-interface/backend/node_modules/

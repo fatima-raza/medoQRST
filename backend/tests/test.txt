@@ -1,3 +1,0 @@
-manually run it, functionality does not reside in app.js
-Keeping testing logic out of the main app.js file.
-
