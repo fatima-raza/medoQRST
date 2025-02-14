@@ -8,7 +8,7 @@ import 'package:admin/pages/patient_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:admin/pages/available_beds.dart';
+import 'package:admin/pages/bed_QR.dart';
 
 class Dashboard extends StatefulWidget {
   final int loggedValue;

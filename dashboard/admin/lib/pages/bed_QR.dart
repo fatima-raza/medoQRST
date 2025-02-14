@@ -1,17 +1,21 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class GenerateQRCodes extends StatefulWidget {
+  const GenerateQRCodes({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _GenerateQRCodesState createState() => _GenerateQRCodesState();
 }
 
 class _GenerateQRCodesState extends State<GenerateQRCodes> {
   bool _isSingleMode = true;
-  TextEditingController _singleBedController = TextEditingController();
-  TextEditingController _lastBedController = TextEditingController();
-  TextEditingController _numBedsController = TextEditingController();
+  final TextEditingController _singleBedController = TextEditingController();
+  final TextEditingController _lastBedController = TextEditingController();
+  final TextEditingController _numBedsController = TextEditingController();
   final FocusNode bedNoFocusNode = FocusNode();
 
   List<int> _bedNumbers = [];
@@ -127,13 +131,19 @@ class _GenerateQRCodesState extends State<GenerateQRCodes> {
                 keyboardType: TextInputType.number,
               ),
               SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: _generateSingleQR,
-                child: Text(
-                  "Generate",
-                  style:
-                      TextStyle(color: const Color.fromARGB(255, 138, 24, 24)),
-                ),
+              Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.end, // Aligns button to rightmost corner
+                children: [
+                  ElevatedButton(
+                    onPressed: _generateSingleQR,
+                    child: Text(
+                      "Generate",
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 138, 24, 24)),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               if (_singleQrData != null)
