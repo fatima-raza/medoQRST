@@ -1,6 +1,6 @@
 import 'package:admin/pages/access_record.dart';
 import 'package:admin/pages/admission_info.dart';
-import 'package:admin/pages/available_beds.dart';
+// import 'package:admin/pages/available_beds.dart';
 import 'package:admin/pages/contact_info.dart';
 import 'package:admin/pages/discharge_card.dart';
 import 'package:admin/pages/login.dart';
@@ -8,6 +8,7 @@ import 'package:admin/pages/patient_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:admin/pages/available_beds.dart';
 
 class Dashboard extends StatefulWidget {
   final int loggedValue;
@@ -53,7 +54,7 @@ class _DashboardState extends State<Dashboard> {
         );
 
       case '/available_beds':
-        return AvailableBeds();
+        return GenerateQRCodes();
       case '/discharge_card':
         return DischargeCard();
       case '/access_record':
@@ -179,7 +180,7 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           AdminMenuItem(
-            title: 'Available Beds',
+            title: 'Bed QR',
             icon: Icons.bed,
             route: '/available_beds',
           ),
