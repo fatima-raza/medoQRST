@@ -14,15 +14,15 @@ class _LoginMobileState extends State<LoginMobile> {
   bool _isChecked = false;
 
   // Controllers for TextFields
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void _login() {
-    String enteredEmail = _emailController.text.trim();
+    String enteredUsername = _usernameController.text.trim();
     String enteredPassword = _passwordController.text.trim();
 
     // Replace this static logic with database interaction logic in the future
-    if (_validateCredentials(enteredEmail, enteredPassword)) {
+    if (_validateCredentials(enteredUsername, enteredPassword)) {
       // Navigate to the Dashboard if credentials are correct
       Navigator.push(
         context,
@@ -37,7 +37,8 @@ class _LoginMobileState extends State<LoginMobile> {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text("Login Failed"),
-          content: const Text("Invalid email or password. Please try again."),
+          content:
+              const Text("Invalid username or password. Please try again."),
           actions: [
             TextButton(
               onPressed: () {
@@ -55,12 +56,12 @@ class _LoginMobileState extends State<LoginMobile> {
   }
 
   // Static validation logic - Replace this method with database logic in the future
-  bool _validateCredentials(String email, String password) {
+  bool _validateCredentials(String username, String password) {
     // Static credentials for testing
-    const String staticEmail = "test@example.com";
+    const String staticUsername = "user123";
     const String staticPassword = "password123";
 
-    return email == staticEmail && password == staticPassword;
+    return username == staticUsername && password == staticPassword;
   }
 
   @override
@@ -93,10 +94,10 @@ class _LoginMobileState extends State<LoginMobile> {
                     ),
                   ),
                   const SizedBox(height: 35),
-                  // Email TextFormField
+                  // Username TextFormField
                   TextFormField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(labelText: 'Email'),
+                    controller: _usernameController,
+                    decoration: const InputDecoration(labelText: 'Username'),
                   ),
                   const SizedBox(height: 20),
                   // Password TextFormField
