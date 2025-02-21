@@ -15,7 +15,7 @@ class _ContactInfoState extends State<ContactInfo> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController relationshipController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
 
   bool isRegistered = false; // Flag to track if registration is successful
 
@@ -150,12 +150,12 @@ class _ContactInfoState extends State<ContactInfo> {
                         Color.fromARGB(255, 122, 121, 121), // Text color
                   ),
                   const SizedBox(height: 10),
-                  // Username Field
+                  // Address Field
                   TextField(
-                    controller: usernameController,
+                    controller: addressController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      labelText: 'Username',
+                      labelText: 'Address',
                       border: const OutlineInputBorder(),
                       labelStyle: GoogleFonts.roboto(
                         color:
@@ -190,12 +190,12 @@ class _ContactInfoState extends State<ContactInfo> {
                         final String relationship =
                             relationshipController.text.trim();
                         final String phone = phoneController.text.trim();
-                        final String username = usernameController.text.trim();
+                        final String address = addressController.text.trim();
 
                         if (name.isEmpty ||
                             relationship.isEmpty ||
                             phone.isEmpty ||
-                            username.isEmpty) {
+                            address.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Please fill out all fields.'),
@@ -216,7 +216,7 @@ class _ContactInfoState extends State<ContactInfo> {
                                 'name': name,
                                 'relationship': relationship,
                                 'phone': phone,
-                                'username': username,
+                                'address': address,
                               }),
                             );
                             if (response.statusCode == 200) {
